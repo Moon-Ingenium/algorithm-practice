@@ -1,36 +1,44 @@
 var meetings = [
-    {
-        startTime: 2,
-        endTime: 3
-    },
-    {
-        startTime: 5,
-        endTime: 6
-    },
-    {
-        startTime: 3,
-        endTime: 4
-    },
-    {
-        startTime: 2,
-        endTime: 4
+    { startTime: 0,  endTime: 1 },
+    { startTime: 3,  endTime: 5 },
+    { startTime: 4,  endTime: 8 },
+    { startTime: 10, endTime: 12 },
+    { startTime: 9,  endTime: 10 },
+  ]
+
+  function mergeRanges(meetings) {
+
+    // Create a deep copy of the meetings array
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Deep_Clone
+    const meetingsCopy = JSON.parse(JSON.stringify(meetings));
+    console.log(meetingsCopy)
+    // Sort by start time
+    const sortedMeetings = meetingsCopy.sort((a, b) => {
+      return a.startTime - b.startTime;
+    });
+    console.log(sortedMeetings)
+  
+    // Initialize mergedMeetings with the earliest meeting
+    const mergedMeetings = [sortedMeetings[0]];
+    console.log(mergedMeetings, 'merged')
+  
+    for (let i = 1; i < sortedMeetings.length; i++) {
+      const currentMeeting    = sortedMeetings[i];
+    //   console.log(currentMeeting)
+      const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
+//   console.log(lastMergedMeeting)
+      // If the current meeting overlaps with the last merged meeting, use the
+      // later end time of the two
+      if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
+        lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
+      } else {
+  
+        // Add the current meeting since it doesn't overlap
+        mergedMeetings.push(currentMeeting);
+        // console.log(currentMeeting)
+      }
     }
 
-]
-
-function checkObjectArray({ startTime, endTime })
-{
-    var newMeeting = {};
-    if (meetings.startTime === mettings.endTime || meetings.endTime === meetings.startTime) {
-        return false;
-    }
-    else if (meetings.startTime < mettings.endTime || meetings.endTime < meetings.startTime){
-        startTime.push(newMeeting) & endTime.push(newMeeting)
-    }
-return newMeeting;
-}
-function mergeRanges(newMeeting){
-    newMeeting.push(meetings)
-   
-};
-console.log(meetings)
+    return mergedMeetings;
+  }
+  mergeRanges(meetings);
