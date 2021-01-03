@@ -1,5 +1,5 @@
 var isPalindrome = function(x) {
-solved as string
+// solved as string
      var xString = "" + x;
 var reverseNumbers = xString.split("").reverse().join("");
     if (reverseNumbers===xString){
