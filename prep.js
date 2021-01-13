@@ -12,17 +12,6 @@ function total_characters(arry) {
 
 console.log(total_characters(arry));
 
-// var heads =0;
-// n = 10;
-// var tails = 0;
-// function flip_coin(n){
-//     // if heads increase count
-//     // if tails increase count
-//     // return number of heads
-//     // each time its flipped document if its heads or tails
-//     // 
-//     return heads; //number
-// }
 
 var arry = [304, 5]
 var sum = 0;
@@ -39,4 +28,4 @@ function sum_of_numbers(arry) {
     return sumArry;
 }
 console.log(sum_of_numbers(arry));
-//  [309, 12]
+ [309, 12]
