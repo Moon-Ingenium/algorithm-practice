@@ -33,3 +33,38 @@ var findNumbers = function (nums) {
     return count;
   };
 //   https://leetcode.com/problems/fizz-buzz/
+
+// Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.
+// Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+// ex. Input: nums = [1,1,2]
+// Output: 2, nums = [1,2]
+var removeDuplicates = function(nums) {
+    var currentNum = 0;
+    var currentIndex = 1;
+    
+    if (!nums || !nums.length) return [];
+    
+    while (currentNum !== nums.length -1) {
+        if (nums[currentNum] === nums[currentIndex]) {
+            nums.splice(currentIndex, 1);
+            
+        } else {
+            currentNum++;
+            currentIndex++;
+        }
+    }
+    
+    
+    return nums.length;
+};
+
+// remove duplicates in place from sorted array
+// empty array, or non existent array?
+// [1,1,2,3] -> 3, but the input is modified to [1,2,3]
+// [] -> 0
+// currentNum = nums[0];
+// currentIndex = 1;
+// loop through array nums, while currentNum !== num[nums.length - 1]
+// compare num[currentIndex] with currentNum, 
+// if same, array.splice(currentIndex, 1)
+// if not the same, reassign currentNum to currentIndex, currentIndex = currentIndex +1
