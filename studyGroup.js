@@ -68,23 +68,46 @@
 // compare num[currentIndex] with currentNum, 
 // if same, array.splice(currentIndex, 1)
 // if not the same, reassign currentNum to currentIndex, currentIndex = currentIndex +1
-var nums = [2,7,11,15];
-var target = 9;
-var twoSum = function(nums, target) {
-  var result =[];
-  var store ={};
-  var key;
-for (var i =0; i<nums.length;i++){
-  store[nums[i]]=i;
+// var nums = [2,7,11,15];
+// var target = 9;
+// var twoSum = function(nums, target) {
+//   var result =[];
+//   var store ={};
+//   var key;
+// for (var i =0; i<nums.length;i++){
+//   store[nums[i]]=i;
+// }
+// for(var i =0; i<nums.length;i++){
+//   key = target - nums[i];
+//   if (store[key] > -1 && store[key]!==i){
+//     result.push(i);
+//     result.push(store[key])
+//     break;
+//   }
+// }
+// return result;
+// }
+// console.log(twoSum(nums,target))
+var s ="oneTwoThree";
+
+
+// return number of words
+// go through word, 
+// counter ++ each time find a cap letter
+// return number of words
+function camelcase(s) {
+    if(!s || s=== " "){
+        return 0;
+    }
+let count = 1;
+for (let i=0;i<s.length;i++){
+    if(s[i].match(/[A-Z]/g)){
+        count++
+    }
+    
 }
-for(var i =0; i<nums.length;i++){
-  key = target - nums[i];
-  if (store[key] > -1 && store[key]!==i){
-    result.push(i);
-    result.push(store[key])
-    break;
-  }
+return count;
+
 }
-return result;
-}
-console.log(twoSum(nums,target))
+console.log(camelcase("loverHorseGuy"))
+
