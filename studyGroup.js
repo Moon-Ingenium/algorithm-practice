@@ -95,19 +95,4 @@ var s ="oneTwoThree";
 // go through word, 
 // counter ++ each time find a cap letter
 // return number of words
-function camelcase(s) {
-    if(!s || s=== " "){
-        return 0;
-    }
-let count = 1;
-for (let i=0;i<s.length;i++){
-    if(s[i].match(/[A-Z]/g)){
-        count++
-    }
-    
-}
-return count;
-
-}
-console.log(camelcase("loverHorseGuy"))
-
+// 
