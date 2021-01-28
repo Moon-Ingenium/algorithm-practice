@@ -37,43 +37,77 @@
 //   };
 
 // //   console.log(isValid('([)]'))
-//   console.log(isValid('{[[[]]]}'))
-var checkIfExist = function(arr) {
-  //     run through thr array 
-  //     check for m
-  //     check for n m*2
-  //     return boolean
+// //   console.log(isValid('{[[[]]]}'))
+// var checkIfExist = function(arr) {
+//   //     run through thr array 
+//   //     check for m
+//   //     check for n m*2
+//   //     return boolean
     
-      for(i=0;i<arr.length;i++){
-     if(arr[i] === (arr[i+1]/2)|| (arr[i]/2) === arr[i+1])
-     {
-     return true;
-    }
-  }
-  return false;
-  };
+//       for(i=0;i<arr.length;i++){
+//      if(arr[i] === (arr[i+1]/2)|| (arr[i]/2) === arr[i+1])
+//      {
+//      return true;
+//     }
+//   }
+//   return false;
+//   };
 
-  console.log(checkIfExist([10,2,5,3]));
-  var checkIfExist = function(arr) {
-    //     run through thr array 
+  // console.log(checkIfExist([10,2,5,3]));
+  // var checkIfExist = function(arr) {
+  //   //     run through thr array 
     //     check for m
     //     check for n m*2
     //     return boolean
-          var obj = {};
-      var item;
-        var result = false
-      for (var i = 0; i < arr.length; i++) {
-        item = arr[i];
-        obj[item] = i
-      }
+  //         var obj = {};
+  //     var item;
+  //       var result = false
+  //     for (var i = 0; i < arr.length; i++) {
+  //       item = arr[i];
+  //       obj[item] = i
+  //     }
     
-      // once the object is set up
-      arr.forEach((item, i) => {
-        if (obj[item * 2]) {
-          // the key is in the object, so there is a double obj[5 * 2] || obj[10] exists
-          result =  true;
-        }
-      })
+  //     // once the object is set up
+  //     arr.forEach((item, i) => {
+  //       if (obj[item * 2]) {
+  //         // the key is in the object, so there is a double obj[5 * 2] || obj[10] exists
+  //         result =  true;
+  //       }
+  //     })
         
-        return result;
-    }
+  //       return result;
+  //   }
+  // Input: arr = [7,1,14,11]
+ 
+  // var checkIfExist = function(arr) {
+  //   //     run through thr array 
+  //   //     check for m
+  //   //     check for n m*2
+  //   //     return boolean
+  //       let boolean= false;
+  //       for (let i =0;i<arr.length;i++){
+  //           let m = arr[i];
+  //           for(let j =1; j< arr.length; j++){
+  //               let n = arr[j];
+  //               if(n=== (m*2) || n=== (m/2) && i!==j){
+  //                   boolean = true;
+                    
+  //               }
+  //           }
+  //       }
+        
+  //       return boolean;
+  //   }
+  //   console.log(checkIfExist([10,2,5,3]));
+  // --- Directions
+// Given a string, return a new string with the reversed
+// order of characters
+// --- Examples
+//   reverse('apple') === 'leppa'
+//   reverse('hello') === 'olleh'
+//   reverse('Greetings!') === '!sgniteerG'
+
+  function reverse(s){
+  return s.split("").reverse().join('');
+  }
+  console.log(reverse("Hiya"))
