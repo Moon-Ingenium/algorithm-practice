@@ -106,8 +106,58 @@
 //   reverse('apple') === 'leppa'
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
+let braces = "[({)}](]"
 
-  function reverse(s){
-  return s.split("").reverse().join('');
+function validBraces(braces){
+  let result = false;
+if (braces === ""){
+return result;
+}
+//TODO 
+// return a boolean
+
+// go through the string and find the match pair
+// if empty string return false
+// define variables to swap
+// let leftIndex = 0;
+// let rightIndex = braces.length-1;
+
+
+// while(leftIndex<rightIndex){ 
+// let temp = braces[leftIndex];//braces[0]1
+// braces[leftIndex] = braces[rightIndex];// leftIndex = braces[7]6
+// braces[rightIndex] =temp;//rightIndex= [0]1
+// leftIndex ++;
+// rightIndex --;
+// if(leftIndex === "[" && rightIndex === "]" || leftIndex === "(" && rightIndex === ")" || leftIndex === "{" && rightIndex === "}"){
+// result = true;
+// }
+ 
+// }
+
+// return result;
+var obj = {
+  '{': '}',
+  '(': ')',
+  '[': ']'
+}
+var stack = [];
+for(i=0;i<braces.length;i++){
+  if (braces[i] === "("|| "[" || "{"){
+  stack.push(braces[i]);
+}
+else
+{
+  if(obj[stack[stack.length-1]] === stack[i]){
+    result = true;
   }
-  console.log(reverse("Hiya"))
+}
+}
+return result;
+}
+
+// if([{(//push to stack)
+// else obj[arr[arr.lngth-1]] === input[i] still matching
+// else not matching
+
+console.log(validBraces("()"));
