@@ -39,9 +39,12 @@ var maxProfit = function(prices) {
 //     loop through the array to max profit
 //     index cannot be the same
     // subtract max num - min num 
-  
+
         let buy = Math.max(...prices);
         let sell = Math.min(...prices);
+        if(prices.indexOf(buy)< prices.indexOf(sell)){
+            
+        }
     maxProfit = buy - sell;
    console.log(buy)
    console.log(sell);
